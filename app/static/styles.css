@@ -1,0 +1,403 @@
+/* =========================
+   Base Layout & Typography
+   ========================= */
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    color: #222;
+    line-height: 1.5;
+}
+
+main {
+    padding: 32px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+header {
+    background: #1f2933;
+    color: #fff;
+    padding: 16px 32px;
+    border-bottom: 1px solid #111827;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+header p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* =========================
+   Cards
+   ========================= */
+
+.card,
+.result-card {
+    background: #fff;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    animation: fadeInUp 0.35s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Headings
+   ========================= */
+
+h2 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================
+   Inputs
+   ========================= */
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+button {
+    background: #1f2933;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    background: #111827;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* =========================
+   Verdict Banner
+   ========================= */
+
+.verdict {
+    padding: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 16px;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    border: 1px solid transparent;
+}
+
+.verdict.legitimate {
+    background: #e6f4ea;
+    color: #1e7f3b;
+    border-color: #86efac;
+}
+
+.verdict.suspicious {
+    background: #fff4e5;
+    color: #a15c00;
+    border-color: #fde68a;
+}
+
+.verdict.phishing {
+    background: #fdecea;
+    color: #b42318;
+    border-color: #fecaca;
+}
+
+/* =========================
+   Confidence & Analysis
+   ========================= */
+
+.confidence {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #374151;
+}
+
+/* Analysis panel */
+.analysis-panel {
+    margin-top: 20px;
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+/* =========================
+   Risk Meter
+   ========================= */
+
+.risk-meter {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.risk-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.risk-fill.low {
+    background: #16a34a;
+}
+
+.risk-fill.medium {
+    background: #f59e0b;
+}
+
+.risk-fill.high {
+    background: #dc2626;
+}
+
+/* =========================
+   Explanation Panel
+   ========================= */
+
+.explanation {
+    margin-top: 16px;
+    background: #ffffff;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border-left: 4px solid #d1d5db;
+}
+
+.explanation ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+}
+
+.explanation li {
+    font-size: 13px;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+/* =========================
+   Back Link
+   ========================= */
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #2563eb;
+    transition: color 0.2s ease;
+}
+
+.back:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+    padding: 16px;
+}
+/* =========================
+   Recommended Action
+   ========================= */
+
+.action {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #111827;
+}
+
+/* =========================
+   Scan Metadata
+   ========================= */
+
+.metadata {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #4b5563;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+}
+
+/* =========================
+   Severity Legend
+   ========================= */
+
+.legend {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend .low::before {
+    content: "●";
+    color: #16a34a;
+}
+
+.legend .medium::before {
+    content: "●";
+    color: #f59e0b;
+}
+
+.legend .high::before {
+    content: "●";
+    color: #dc2626;
+}
+/* =========================
+   Scanning State (UX Feedback)
+   ========================= */
+
+.scan-btn.scanning {
+    background: #9ca3af;          /* muted gray */
+    cursor: wait;
+    box-shadow: none;
+}
+
+.scan-btn:disabled {
+    opacity: 0.8;
+}
+/* =========================
+   Inline Help Tooltip
+   ========================= */
+
+.help-tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 13px;
+    cursor: help;
+    color: inherit;
+}
+
+.help-tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 260px;
+    background-color: #111827;
+    color: #f9fafb;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: opacity 0.2s ease;
+}
+
+/* Tooltip arrow */
+.help-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #111827 transparent transparent transparent;
+}
+
+/* Show on hover & keyboard focus */
+.help-tooltip:hover .tooltip-text,
+.help-tooltip:focus-within .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+/* =========================
+   Verdict Icons
+   ========================= */
+
+.verdict {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.verdict-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.verdict-text {
+    font-weight: 600;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PhishGuard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>PhishGuard</h1>
+    <p>Threat Analysis Console</p>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", event => {
+            const button = form.querySelector(".scan-btn");
+            if (!button) return;
+
+            // Prevent immediate submission
+            event.preventDefault();
+
+            // UX feedback
+            button.disabled = true;
+            button.textContent = "Scanning…";
+            button.classList.add("scanning");
+
+            // Small intentional delay (UX polish)
+            setTimeout(() => {
+                form.submit();
+            }, 300); // 400ms is ideal
+        });
+    });
+});
+</script>
+
+
+
+<!-- Risk meter JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".risk-fill").forEach(bar => {
+        const width = bar.getAttribute("data-width");
+        if (width !== null) {
+            bar.style.width = width + "%";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

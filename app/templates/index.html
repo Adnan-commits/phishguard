@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>URL Scan</h2>
+    <form method="POST" action="/scan-url">
+        <input type="text" name="url" placeholder="Enter URL to scan" required>
+        <button type="submit" class="scan-btn">Scan URL</button>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Email Scan</h2>
+    <form method="POST" action="/scan-email">
+        <input type="email" name="sender" placeholder="Sender email" required>
+        <input type="text" name="subject" placeholder="Email subject" required>
+        <textarea name="body" placeholder="Email body" rows="6" required></textarea>
+        <button type="submit" class="scan-btn">Scan Email</button>
+    </form>
+</div>
+{% endblock %}

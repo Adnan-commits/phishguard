@@ -1,0 +1,14 @@
+Feature Order:
+1. url_length
+2. has_ip
+3. dot_count
+4. has_at
+5. has_https
+6. dash_count
+7. subdomain_count
+8. domain_length
+9. path_length
+10. digit_count
+11. uses_shortener
+12. keyword_count
+13. query_param_count
