@@ -1,9 +1,13 @@
+import sys
+import os
+
+# ✅ MUST come before importing project modules
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from flask import Flask, render_template, request
 from utils.hybrid_detector import detect_phishing_url
 from utils.email_hybrid_detector import detect_phishing_email
 from datetime import datetime
-
-import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -53,4 +57,4 @@ def scan_email():
 
 
 if __name__ == "__main__":
-     app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port=10000)
